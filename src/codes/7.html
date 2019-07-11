@@ -1,0 +1,50 @@
+<style>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 4px;
+      background: transparent;
+    }
+    select[multiple][size="1"]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size="1"]:not(:focus) > option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size="1"]:not(:focus) > option:checked {
+      display: inline-block;
+    }
+  }
+</style>
+
+<select multiple size="1" style="width: 100%;">
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>

@@ -1,0 +1,21 @@
+{
+  "name": "make-select-multiple-dropdown",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "repository": "",
+  "license": "WTFPL",
+  "scripts": {
+    "clean": "rimraf docs/",
+    "start": "npm run clean && parcel       src/index.html --out-dir docs --no-cache ",
+    "build": "npm run clean && parcel build src/index.html --out-dir docs --no-cache --public-url . --no-source-maps"
+  },
+  "devDependencies": {
+    "highlight.js": "^9.15.8",
+    "parcel-bundler": "^1.12.3",
+    "posthtml-include": "^1.2.0",
+    "posthtml-inline-assets": "^3.0.0",
+    "reveal.js": "^3.8.0",
+    "rimraf": "^2.6.3"
+  }
+}

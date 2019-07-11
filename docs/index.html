@@ -1,0 +1,1291 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>&lt;select multiple size="1"&gt; をドロップダウンにする</title>
+  <link rel="stylesheet" href="/src.e31bb0bc.css"></head>
+  <body>
+    <main class="reveal">
+      <div class="slides">
+        <section>
+  <h1>&lt;select multiple size="1"&gt; をドロップダウンにする</h1>
+  <p>null</p>
+</section>
+
+<section>
+  <h2>きっかけ</h2>
+  <a href="https://qiita.com/hand-dot/items/1a98ab5d16cd2c2e94f4" rel="noopener nofollow" target="_blank"><img src="/preface.cce035a8.png"></a>
+</section>
+
+<section>
+  <h2>&lt;select&gt;</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">select</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<select>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>&lt;select multiple&gt;</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<select multiple style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>&lt;select multiple size="1"&gt;</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>フォーカス時、ドロップダウンする</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+    }
+  }
+</style>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>非フォーカス時の見た目を単数選択の select に合わせる</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: menulist;
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) {
+      -webkit-appearance: menulist;
+    }
+  }
+</style>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>非フォーカス時、選択項目だけ表示する</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: menulist;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked {
+      display: inline-block;
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) {
+      -webkit-appearance: menulist;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked {
+      display: inline-block;
+    }
+  }
+</style>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>非フォーカス時、表示項目がはみ出さないようにする</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: menulist;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked {
+      display: inline-block;
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) {
+      -webkit-appearance: menulist;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked {
+      display: inline-block;
+    }
+  }
+</style>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h3>overflow 効かない</h3>
+</section>
+
+<section>
+  <h2>非フォーカス時、表示項目がはみ出さないようにする</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 4px;
+      background: transparent;
+    }
+    select[multiple][size="1"]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked {
+      display: inline-block;
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 4px;
+      background: transparent;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked {
+      display: inline-block;
+    }
+  }
+</style>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>非フォーカス時、表示項目の背景を透明にする ＆ カンマ区切りにする</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 4px;
+      background: transparent;
+    }
+    select[multiple][size="1"]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked {
+      display: inline-block;
+      background-color: transparent;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 4px;
+      background: transparent;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked {
+      display: inline-block;
+      background-color: transparent;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+</style>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h3>background-color 効かない</h3>
+</section>
+
+<section>
+  <h2>非フォーカス時、表示項目の背景を白にする</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 4px;
+      background: transparent;
+    }
+    select[multiple][size="1"]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked {
+      display: inline-block;
+      background-image: linear-gradient(white, white);
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 4px;
+      background: transparent;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked {
+      display: inline-block;
+      background-image: linear-gradient(white, white);
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+</style>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>非フォーカス時、表示項目の背景を透明にする</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 6px;
+      background: transparent;
+    }
+    select[multiple][size="1"]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked {
+      display: contents;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 6px;
+      background: transparent;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked {
+      display: contents;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+</style>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h2>非フォーカス時、項目のクリックを無効化する</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 6px;
+      background: transparent;
+    }
+    select[multiple][size="1"]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked {
+      display: contents;
+      pointer-events: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 6px;
+      background: transparent;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked {
+      display: contents;
+      pointer-events: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+</style>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h3>いい感じ</h3>
+</section>
+
+<section>
+  <h2>フォーカス時、項目のクリックの挙動をチェックボックスみたいにする</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 6px;
+      background: transparent;
+    }
+    select[multiple][size="1"]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked {
+      display: contents;
+      pointer-events: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+  if (matchMedia('(hover:hover)').matches) {
+    addEventListener('pointerdown', event =&gt; {
+      if (event.target.matches('select[multiple][size="1"]&gt;option')) {
+        event.preventDefault()
+        event.target.selected = !event.target.selected
+      }
+    })
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 6px;
+      background: transparent;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked {
+      display: contents;
+      pointer-events: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+</style>
+
+<script>
+  if (matchMedia('(hover:hover)').matches) {
+    addEventListener('pointerdown', event => {
+      if (event.target.matches('select[multiple][size=&quot;1&quot;]>option')) {
+        event.preventDefault()
+        event.target.selected = !event.target.selected
+      }
+    })
+  }
+</script>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+<section>
+  <h3>スクリプトを書いてしまった</h3>
+</section>
+
+<section>
+  <h2>フォーカス時、項目の見た目をチェックボックスみたいにする</h2>
+  <div class="code">
+    <pre><code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+  @media (hover: hover) {
+    select[multiple][size="1"]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size="1"]:focus &gt; option:not(:checked) {
+    }
+    select[multiple][size="1"]:focus &gt; option:checked {
+    }
+    select[multiple][size="1"]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 6px;
+      background: transparent;
+    }
+    select[multiple][size="1"]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked {
+      display: contents;
+      pointer-events: none;
+    }
+    select[multiple][size="1"]:not(:focus) &gt; option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span>
+  if (matchMedia('(hover:hover)').matches) {
+    addEventListener('pointerdown', event =&gt; {
+      if (event.target.matches('select[multiple][size="1"]&gt;option')) {
+        event.preventDefault()
+        event.target.selected = !event.target.selected
+      }
+    })
+  }
+<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100%;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Cupcake<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Donut<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Eclair<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Froyo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Gingerbread<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Honeycomb<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Ice<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Jelly<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>KitKat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Lollipop<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Marshmallow<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Nougat<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Oreo<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>Pie<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+    <iframe src="data:text/html;,<style>
+  @media (hover: hover) {
+    select[multiple][size=&quot;1&quot;]:focus {
+      overflow: visible;
+      border: none;
+    }
+    select[multiple][size=&quot;1&quot;]:focus > option:not(:checked) {
+    }
+    select[multiple][size=&quot;1&quot;]:focus > option:checked {
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) {
+      -webkit-appearance: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      border: none;
+      padding: 2px 20px 3px 6px;
+      background: transparent;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus)::before {
+      content: '';
+      -webkit-appearance: menulist;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:not(:checked) {
+      display: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked {
+      display: contents;
+      pointer-events: none;
+    }
+    select[multiple][size=&quot;1&quot;]:not(:focus) > option:checked ~ option:checked::before {
+      content: ', ';
+    }
+  }
+</style>
+
+<script>
+  if (matchMedia('(hover:hover)').matches) {
+    addEventListener('pointerdown', event => {
+      if (event.target.matches('select[multiple][size=&quot;1&quot;]>option')) {
+        event.preventDefault()
+        event.target.selected = !event.target.selected
+      }
+    })
+  }
+</script>
+
+<select multiple size=&quot;1&quot; style=&quot;width: 100%;&quot;>
+  <option>Cupcake</option>
+  <option>Donut</option>
+  <option>Eclair</option>
+  <option>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+"></iframe>
+  </div>
+</section>
+
+      </div>
+    </main>
+    <script src="/src.e31bb0bc.js"></script>
+  </body>
+</html>
