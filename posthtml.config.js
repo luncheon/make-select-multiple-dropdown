@@ -25,8 +25,7 @@ module.exports = {
           },
           transform(node, data) {
             delete node.attrs.src
-            const html = data.buffer.toString('utf8')
-            node.content = [Highlight.highlight('html', html).value]
+            node.content = [data.buffer.toString('utf8')]
           },
         },
       },

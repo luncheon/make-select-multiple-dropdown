@@ -5464,6 +5464,11 @@ module.hot.accept(reloadCSS);
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/diff2html/dist/diff2html.min.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"styles.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
@@ -5480,6 +5485,8 @@ require("reveal.js/css/theme/black.css");
 
 require("highlight.js/styles/github.css");
 
+require("diff2html/dist/diff2html.min.css");
+
 require("./styles.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -5487,7 +5494,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reveal.default.initialize({
   hash: true
 });
-},{"reveal.js":"../node_modules/reveal.js/js/reveal.js","reveal.js/css/reveal.css":"../node_modules/reveal.js/css/reveal.css","reveal.js/css/theme/black.css":"../node_modules/reveal.js/css/theme/black.css","highlight.js/styles/github.css":"../node_modules/highlight.js/styles/github.css","./styles.css":"styles.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"reveal.js":"../node_modules/reveal.js/js/reveal.js","reveal.js/css/reveal.css":"../node_modules/reveal.js/css/reveal.css","reveal.js/css/theme/black.css":"../node_modules/reveal.js/css/theme/black.css","highlight.js/styles/github.css":"../node_modules/highlight.js/styles/github.css","diff2html/dist/diff2html.min.css":"../node_modules/diff2html/dist/diff2html.min.css","./styles.css":"styles.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -5515,7 +5522,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58254" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54987" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

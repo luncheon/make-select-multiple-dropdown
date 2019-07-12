@@ -6,11 +6,13 @@
   "repository": "",
   "license": "WTFPL",
   "scripts": {
-    "clean": "rimraf docs/",
-    "start": "npm run clean && parcel       src/index.html --out-dir docs --no-cache ",
-    "build": "npm run clean && parcel build src/index.html --out-dir docs --no-cache --public-url . --no-source-maps"
+    "clean": "rimraf docs/ .diff/",
+    "start": "npm run clean && node diff.js && parcel       src/index.html --out-dir docs --no-cache ",
+    "build": "npm run clean && node diff.js && parcel build src/index.html --out-dir docs --no-cache --public-url . --no-source-maps"
   },
   "devDependencies": {
+    "diff": "^4.0.1",
+    "diff2html": "^2.11.2",
     "highlight.js": "^9.15.8",
     "parcel-bundler": "^1.12.3",
     "posthtml-include": "^1.2.0",
