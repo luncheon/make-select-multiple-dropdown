@@ -1,23 +1,26 @@
 <style>
   @media (hover: hover) {
-    select[multiple][size="1"]:focus {
+    select[multiple] {
+      height: 18px;
+    }
+    select[multiple]:focus {
       overflow: visible;
       border: none;
     }
-    select[multiple][size="1"]:focus > option:not(:checked) {
+    select[multiple]:focus > option:not(:checked) {
+      background-image: linear-gradient(white, white);
     }
-    select[multiple][size="1"]:focus > option:checked {
-    }
-    select[multiple][size="1"]:not(:focus) {
+    select[multiple]:not(:focus) {
       -webkit-appearance: none;
+      padding: 2px 20px 2px 4px;
+      position: relative;
+      z-index: 0;
+      border: none;
+      background: transparent;
       overflow: hidden;
       text-overflow: ellipsis;
-      position: relative;
-      border: none;
-      padding: 2px 20px 3px 6px;
-      background: transparent;
     }
-    select[multiple][size="1"]:not(:focus)::before {
+    select[multiple]:not(:focus)::before {
       content: '';
       -webkit-appearance: menulist;
       position: absolute;
@@ -27,43 +30,46 @@
       bottom: 0;
       z-index: -1;
     }
-    select[multiple][size="1"]:not(:focus) > option:not(:checked) {
+    select[multiple]:not(:focus) > option:not(:checked) {
       display: none;
     }
-    select[multiple][size="1"]:not(:focus) > option:checked {
+    select[multiple]:not(:focus) > option:checked {
       display: contents;
       pointer-events: none;
     }
-    select[multiple][size="1"]:not(:focus) > option:checked ~ option:checked::before {
+    select[multiple]:not(:focus) > option:checked ~ option:checked::before {
       content: ', ';
     }
   }
 </style>
 
-<script>
-  if (matchMedia('(hover:hover)').matches) {
-    addEventListener('pointerdown', event => {
-      if (event.target.matches('select[multiple][size="1"]>option')) {
-        event.preventDefault()
-        event.target.selected = !event.target.selected
-      }
-    })
-  }
-</script>
-
-<select multiple size="1" style="width: 100%;">
+<select multiple>
   <option>Cupcake</option>
-  <option>Donut</option>
+  <option selected>Donut</option>
   <option>Eclair</option>
-  <option>Froyo</option>
-  <option>Gingerbread</option>
-  <option>Honeycomb</option>
+  <option selected>Froyo</option>
+  <option selected>Gingerbread</option>
+  <option selected>Honeycomb</option>
   <option>Ice</option>
-  <option>Jelly</option>
+  <option selected>Jelly</option>
   <option>KitKat</option>
-  <option>Lollipop</option>
-  <option>Marshmallow</option>
-  <option>Nougat</option>
+  <option selected>Lollipop</option>
+  <option selected>Marshmallow</option>
+  <option selected>Nougat</option>
   <option>Oreo</option>
   <option>Pie</option>
 </select>
+
+<style>
+  html {
+    background: #3cf;
+  }
+  body {
+    background: #bef;
+    height: fit-content;
+    padding: 8px;
+  }
+  select {
+    width: 100%;
+  }
+</style>

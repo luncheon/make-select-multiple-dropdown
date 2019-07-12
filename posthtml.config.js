@@ -16,7 +16,7 @@ module.exports = {
             return node.tag === 'iframe' && node.attrs && node.attrs.src
           },
           transform(node, data) {
-            node.attrs.src = 'data:text/html;,' + data.buffer.toString('utf8')
+            node.attrs.src = 'data:text/html,' + encodeURIComponent(data.buffer.toString('utf8'))
           },
         },
         code: {

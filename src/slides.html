@@ -1,5 +1,5 @@
 <section>
-  <h1>&lt;select multiple size="1"&gt; をドロップダウンにする</h1>
+  <h1>&lt;select multiple&gt; をドロップダウンにする</h1>
   <p>null</p>
 </section>
 
@@ -8,12 +8,13 @@
   <a href="https://qiita.com/hand-dot/items/1a98ab5d16cd2c2e94f4" rel="noopener nofollow" target="_blank"><img src="assets/preface.png"></a>
 </section>
 
-<section>
+<section class="flex-column">
   <h2>&lt;select&gt;</h2>
   <div class="code">
     <code src="../.diff/00.html"></code>
     <iframe src="codes/00.html"></iframe>
   </div>
+  <h2 class="next">&lt;select multiple&gt;</h2>
 </section>
 
 <section>
@@ -22,45 +23,69 @@
     <code src="../.diff/01.html"></code>
     <iframe src="codes/01.html"></iframe>
   </div>
+  <h2 class="next">問題点</h2>
 </section>
 
 <section>
-  <h2>&lt;select multiple size="1"&gt;</h2>
-  <div class="code">
-    <code src="../.diff/02.html"></code>
-    <iframe src="codes/02.html"></iframe>
-  </div>
+  <h2>問題点</h2>
+  <ul style="padding: 100px 0;">
+    <li>モバイルと PC とで見た目が変わる</li>
+    <li>[Ctrl or Cmd + クリック] わずらわしい</li>
+  </ul>
 </section>
 
 <section>
-  <h2>フォーカス時、ドロップダウンする</h2>
-  <div class="code">
-    <code src="../.diff/03.html"></code>
-    <iframe src="codes/03.html"></iframe>
-  </div>
+  <h3>せやな</h3>
+</section>
+
+<section>
+  <h3>ブラウザーのデフォルトの挙動を変えてほしい</h3>
+</section>
+
+<section>
+  <h3>せやね</h3>
+</section>
+
+<section>
+  <h3>だが現在の私の権力では不可能だ</h3>
+</section>
+
+<section>
+  <h3>素直にフロントエンドのコードでやろうとしてみた</h3>
 </section>
 
 <section>
   <h2>非フォーカス時の見た目を単数選択の select に合わせる</h2>
   <div class="code">
+    <code src="../.diff/02.html"></code>
+    <iframe src="codes/02.html"></iframe>
+  </div>
+  <h2 class="next">選択項目だけを横並びに表示する</h2>
+</section>
+
+<section>
+  <h2>選択項目だけを横並びに表示する</h2>
+  <div class="code">
+    <code src="../.diff/03.html"></code>
+    <iframe src="codes/03.html"></iframe>
+  </div>
+  <h2 class="next">項目をカンマ区切りにする</h2>
+</section>
+
+<section>
+  <h2>項目をカンマ区切りにする</h2>
+  <div class="code">
     <code src="../.diff/04.html"></code>
     <iframe src="codes/04.html"></iframe>
   </div>
+  <h2 class="next">項目がはみ出ないようにする</h2>
 </section>
 
 <section>
-  <h2>非フォーカス時、選択項目だけ表示する</h2>
+  <h2>項目がはみ出ないようにする</h2>
   <div class="code">
     <code src="../.diff/05.html"></code>
     <iframe src="codes/05.html"></iframe>
-  </div>
-</section>
-
-<section>
-  <h2>非フォーカス時、表示項目がはみ出さないようにする</h2>
-  <div class="code">
-    <code src="../.diff/06.html"></code>
-    <iframe src="codes/06.html"></iframe>
   </div>
 </section>
 
@@ -69,15 +94,33 @@
 </section>
 
 <section>
-  <h2>非フォーカス時、表示項目がはみ出さないようにする</h2>
+  <h3>appearance: menulist の制限か</h3>
+</section>
+
+<section>
+  <h3>やっぱ appearance: none にしよう<br>背景に appearance: menulist 入れよう</h3>
+</section>
+
+<section>
+  <h2>項目がはみ出ないようにする</h2>
+  <div class="code">
+    <code src="../.diff/06.html"></code>
+    <iframe src="codes/06.html"></iframe>
+  </div>
+  <h2 class="next">余白を調整する</h2>
+</section>
+
+<section>
+  <h2>余白を調整する</h2>
   <div class="code">
     <code src="../.diff/07.html"></code>
     <iframe src="codes/07.html"></iframe>
   </div>
+  <h2 class="next">項目の背景を透明にする</h2>
 </section>
 
 <section>
-  <h2>非フォーカス時、表示項目の背景を透明にする ＆ カンマ区切りにする</h2>
+  <h2>項目の背景を透明にする</h2>
   <div class="code">
     <code src="../.diff/08.html"></code>
     <iframe src="codes/08.html"></iframe>
@@ -89,7 +132,15 @@
 </section>
 
 <section>
-  <h2>非フォーカス時、表示項目の背景を白にする</h2>
+  <h3>option 要素の制限か</h3>
+</section>
+
+<section>
+  <h3>background-image 効くかな</h3>
+</section>
+
+<section>
+  <h2>項目の背景を白にする</h2>
   <div class="code">
     <code src="../.diff/09.html"></code>
     <iframe src="codes/09.html"></iframe>
@@ -97,15 +148,32 @@
 </section>
 
 <section>
-  <h2>非フォーカス時、表示項目の背景を透明にする</h2>
+  <h3>白じゃダメだ<br>透明じゃなきゃ</h3>
+</section>
+
+<section>
+  <h3>どうしよう</h3>
+</section>
+
+<section>
+  <h3>💡 ぴこーん</h3>
+</section>
+
+<section>
+  <h3>option 要素そのものは表示せずに<br>option の中身だけを表示してみよう</h3>
+</section>
+
+<section>
+  <h2>項目の背景を透明にする</h2>
   <div class="code">
     <code src="../.diff/10.html"></code>
     <iframe src="codes/10.html"></iframe>
   </div>
+  <h2 class="next">項目のクリックを無効化する</h2>
 </section>
 
 <section>
-  <h2>非フォーカス時、項目のクリックを無効化する</h2>
+  <h2>項目のクリックを無効化する</h2>
   <div class="code">
     <code src="../.diff/11.html"></code>
     <iframe src="codes/11.html"></iframe>
@@ -113,14 +181,32 @@
 </section>
 
 <section>
-  <h3>いい感じ</h3>
+  <h3>非フォーカス時についてはいい感じな気がする</h3>
 </section>
 
 <section>
-  <h2>フォーカス時、項目のクリックの挙動をチェックボックスみたいにする</h2>
+  <h2>フォーカス時の高さを調整する</h2>
   <div class="code">
     <code src="../.diff/12.html"></code>
     <iframe src="codes/12.html"></iframe>
+  </div>
+  <h2 class="next">フォーカス時、項目の背景を白にする</h2>
+</section>
+
+<section>
+  <h2>フォーカス時、項目の背景を白にする</h2>
+  <div class="code">
+    <code src="../.diff/13.html"></code>
+    <iframe src="codes/13.html"></iframe>
+  </div>
+  <h2 class="next">フォーカス時、項目クリックの挙動をチェックボックスっぽくする</h2>
+</section>
+
+<section>
+  <h2>フォーカス時、項目クリックの挙動をチェックボックスっぽくする</h2>
+  <div class="code">
+    <code src="../.diff/14.html"></code>
+    <iframe src="codes/14.html"></iframe>
   </div>
 </section>
 
@@ -129,9 +215,21 @@
 </section>
 
 <section>
-  <h2>フォーカス時、項目の見た目をチェックボックスみたいにする</h2>
+  <h2>フォーカス時、選択項目にチェックをつける</h2>
   <div class="code">
-    <code src="../.diff/13.html"></code>
-    <iframe src="codes/13.html"></iframe>
+    <code src="../.diff/15.html"></code>
+    <iframe src="codes/15.html"></iframe>
   </div>
+  <h2 class="next">結論</h2>
+</section>
+
+<section>
+  <h2>結論</h2>
+  <h3 style="padding: 100px 0;">既成のライブラリ使った方が柔軟かつ無難<br>（Chrome だけでも泣きそうなほど大変）</h3>
+  <h2 class="next">未解決問題</h2>
+</section>
+
+<section>
+  <h2>未解決問題</h2>
+  <h3 style="padding: 100px 0;">そもそもフォーカスでドロップダウンしてよいものか？</h3>
 </section>

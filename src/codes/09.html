@@ -1,19 +1,17 @@
 <style>
   @media (hover: hover) {
-    select[multiple][size="1"]:focus {
-      overflow: visible;
-      border: none;
-    }
-    select[multiple][size="1"]:not(:focus) {
+    select[multiple]:not(:focus) {
       -webkit-appearance: none;
+      height: 18px;
+      padding: 2px 20px 2px 4px;
+      position: relative;
+      z-index: 0;
+      border: none;
+      background: transparent;
       overflow: hidden;
       text-overflow: ellipsis;
-      position: relative;
-      border: none;
-      padding: 2px 20px 3px 4px;
-      background: transparent;
     }
-    select[multiple][size="1"]:not(:focus)::before {
+    select[multiple]:not(:focus)::before {
       content: '';
       -webkit-appearance: menulist;
       position: absolute;
@@ -23,32 +21,47 @@
       bottom: 0;
       z-index: -1;
     }
-    select[multiple][size="1"]:not(:focus) > option:not(:checked) {
+    select[multiple]:not(:focus) > option:not(:checked) {
       display: none;
     }
-    select[multiple][size="1"]:not(:focus) > option:checked {
-      display: inline-block;
+    select[multiple]:not(:focus) > option:checked {
+      display: inline;
+      padding: 0;
       background-image: linear-gradient(white, white);
     }
-    select[multiple][size="1"]:not(:focus) > option:checked ~ option:checked::before {
+    select[multiple]:not(:focus) > option:checked ~ option:checked::before {
       content: ', ';
     }
   }
 </style>
 
-<select multiple size="1" style="width: 100%;">
+<select multiple>
   <option>Cupcake</option>
-  <option>Donut</option>
+  <option selected>Donut</option>
   <option>Eclair</option>
-  <option>Froyo</option>
-  <option>Gingerbread</option>
-  <option>Honeycomb</option>
+  <option selected>Froyo</option>
+  <option selected>Gingerbread</option>
+  <option selected>Honeycomb</option>
   <option>Ice</option>
-  <option>Jelly</option>
+  <option selected>Jelly</option>
   <option>KitKat</option>
-  <option>Lollipop</option>
-  <option>Marshmallow</option>
-  <option>Nougat</option>
+  <option selected>Lollipop</option>
+  <option selected>Marshmallow</option>
+  <option selected>Nougat</option>
   <option>Oreo</option>
   <option>Pie</option>
 </select>
+
+<style>
+  html {
+    background: #3cf;
+  }
+  body {
+    background: #bef;
+    height: fit-content;
+    padding: 8px;
+  }
+  select {
+    width: 100%;
+  }
+</style>
