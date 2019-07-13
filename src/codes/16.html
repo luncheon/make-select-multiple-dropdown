@@ -5,6 +5,8 @@
     }
     select[multiple]:focus {
       overflow: visible;
+      isolation: isolate;
+      z-index: 0;
       border: none;
     }
     select[multiple]:focus > option:not(:checked) {
@@ -42,6 +44,17 @@
     }
   }
 </style>
+
+<script>
+  if (matchMedia('(hover:hover)').matches) {
+    addEventListener('pointerdown', event => {
+      if (event.target.matches('select[multiple]>option')) {
+        event.preventDefault()
+        event.target.selected = !event.target.selected
+      }
+    })
+  }
+</script>
 
 <select multiple>
   <option>Cupcake</option>

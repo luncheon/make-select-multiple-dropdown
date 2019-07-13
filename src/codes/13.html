@@ -5,10 +5,6 @@
     }
     select[multiple]:focus {
       overflow: visible;
-      border: none;
-    }
-    select[multiple]:focus > option:not(:checked) {
-      background-image: linear-gradient(white, white);
     }
     select[multiple]:not(:focus) {
       -webkit-appearance: none;
@@ -59,6 +55,8 @@
   <option>Oreo</option>
   <option>Pie</option>
 </select>
+
+<button type="button" onclick="alert(this.textContent)" style="margin-top: .5em;">おさないで</button>
 
 <style>
   html {
