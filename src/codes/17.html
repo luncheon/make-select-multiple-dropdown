@@ -62,7 +62,7 @@
 <script>
   if (matchMedia('(hover:hover)').matches) {
     addEventListener('pointerdown', event => {
-      if (event.target.matches('select[multiple]>option')) {
+      if (event.target.matches('select[multiple]>option:not(:disabled)')) {
         event.preventDefault()
         event.target.selected = !event.target.selected
       }
@@ -74,7 +74,7 @@
   <option>Cupcake</option>
   <option selected>Donut</option>
   <option>Eclair</option>
-  <option selected>Froyo</option>
+  <option disabled>Froyo</option>
   <option selected>Gingerbread</option>
   <option selected>Honeycomb</option>
   <option>Ice</option>
