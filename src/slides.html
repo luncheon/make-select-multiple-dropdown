@@ -20,33 +20,30 @@
 <section>
   <h2>&lt;select multiple&gt; の問題点</h2>
   <ul style="padding: 100px 0;">
-    <li>モバイルと PC とで見た目が変わる<br>（高さが変わるのでレイアウトが崩れる）</li>
+    <li><a href="https://qiita.com/hand-dot/items/1a98ab5d16cd2c2e94f4" rel="noopener nofollow" target="_blank">元記事参照</a></li>
+    <li>モバイルと PC とで見た目が異なる<br>（高さが異なるのでレイアウトが崩れる）</li>
     <li>[Ctrl or Cmd + クリック] わずらわしい</li>
   </ul>
 </section>
 
 <section>
-  <h3>せやな</h3>
+  <h3>そだねー</h3>
 </section>
 
 <section>
-  <h3>ブラウザーのデフォルトの挙動を変えてほしい</h3>
+  <h3>記事中に実装へのリンクあるけど</h3>
 </section>
 
 <section>
-  <h3>せやね</h3>
+  <h3>見なかったことにして<br>私なりに実装してみたよ</h3>
 </section>
 
 <section>
-  <h3>だが現在の私の権力では不可能だ</h3>
+  <h3>まずはドロップダウンする前の外観から</h3>
 </section>
 
 <section>
-  <h3>素直にフロントエンドのコードでやろうとしてみた</h3>
-</section>
-
-<section>
-  <h2>非フォーカス時の見た目を単数選択の select に合わせる</h2>
+  <h2>見た目を単数選択の select に合わせる</h2>
   <div class="code">
     <code src="../.diff/01.html"></code>
     <iframe src="codes/01.html"></iframe>
@@ -66,8 +63,8 @@
 <section>
   <h2>選択項目だけを横並びに表示する</h2>
   <div class="code">
-    <code src="../.diff/03.html"></code>
-    <iframe src="codes/03.html"></iframe>
+    <code src="../.diff/04.html"></code>
+    <iframe src="codes/04.html"></iframe>
   </div>
   <h2 class="next">項目をカンマ区切りにする</h2>
 </section>
@@ -75,28 +72,10 @@
 <section>
   <h2>項目をカンマ区切りにする</h2>
   <div class="code">
-    <code src="../.diff/04.html"></code>
-    <iframe src="codes/04.html"></iframe>
-  </div>
-  <h2 class="next">項目がはみ出ないようにする</h2>
-</section>
-
-<section>
-  <h2>項目がはみ出ないようにする</h2>
-  <div class="code">
     <code src="../.diff/05.html"></code>
     <iframe src="codes/05.html"></iframe>
   </div>
-</section>
-
-<section>
-  <h3>overflow 効かない</h3>
-  <p>（インラインスタイルで !important つけても効かない）</p>
-  <p>appearance: menulist の制限かしら</p>
-</section>
-
-<section>
-  <h3>やっぱ appearance: none にしよう<br>背景に appearance: menulist 入れよう</h3>
+  <h2 class="next">項目がはみ出ないようにする</h2>
 </section>
 
 <section>
@@ -105,14 +84,31 @@
     <code src="../.diff/06.html"></code>
     <iframe src="codes/06.html"></iframe>
   </div>
+</section>
+
+<section>
+  <h3>overflow 効かない</h3>
+  <p>（インラインスタイルで !important つけても効かない）</p>
+</section>
+
+<section>
+  <h3>やっぱ appearance: menulist は背景にしよう</h3>
+</section>
+
+<section>
+  <h2>項目がはみ出ないようにする</h2>
+  <div class="code">
+    <code src="../.diff/07.html"></code>
+    <iframe src="codes/07.html"></iframe>
+  </div>
   <h2 class="next">サイズと余白を調整する</h2>
 </section>
 
 <section>
   <h2>サイズと余白を調整する</h2>
   <div class="code">
-    <code src="../.diff/07.html"></code>
-    <iframe src="codes/07.html"></iframe>
+    <code src="../.diff/08.html"></code>
+    <iframe src="codes/08.html"></iframe>
   </div>
   <h2 class="next">項目の背景を透明にする</h2>
 </section>
@@ -120,15 +116,14 @@
 <section>
   <h2>項目の背景を透明にする</h2>
   <div class="code">
-    <code src="../.diff/08.html"></code>
-    <iframe src="codes/08.html"></iframe>
+    <code src="../.diff/09.html"></code>
+    <iframe src="codes/09.html"></iframe>
   </div>
 </section>
 
 <section>
   <h3>background-color 効かない</h3>
   <p>（インラインスタイルで !important つけても効かない）</p>
-  <p>option 要素の制限かしら</p>
 </section>
 
 <section>
@@ -138,17 +133,13 @@
 <section>
   <h2>項目の背景を白にする</h2>
   <div class="code">
-    <code src="../.diff/09.html"></code>
-    <iframe src="codes/09.html"></iframe>
+    <code src="../.diff/10.html"></code>
+    <iframe src="codes/10.html"></iframe>
   </div>
 </section>
 
 <section>
-  <h3>白じゃダメだ<br>透明じゃなきゃ</h3>
-</section>
-
-<section>
-  <h3>どうしよう</h3>
+  <h3>やっぱ白じゃダメだ<br>透明じゃなきゃ</h3>
 </section>
 
 <section>
@@ -158,8 +149,8 @@
 <section>
   <h2>項目の背景を透明にする</h2>
   <div class="code">
-    <code src="../.diff/10.html"></code>
-    <iframe src="codes/10.html"></iframe>
+    <code src="../.diff/11.html"></code>
+    <iframe src="codes/11.html"></iframe>
   </div>
   <h2 class="next">項目のクリックを無効化する</h2>
 </section>
@@ -167,20 +158,24 @@
 <section>
   <h2>項目のクリックを無効化する</h2>
   <div class="code">
-    <code src="../.diff/11.html"></code>
-    <iframe src="codes/11.html"></iframe>
+    <code src="../.diff/12.html"></code>
+    <iframe src="codes/12.html"></iframe>
   </div>
 </section>
 
 <section>
-  <h3>いい感じ</h3>
+  <h3>ここまではいい感じ</h3>
+</section>
+
+<section>
+  <h3>ここからはドロップダウンしたときの挙動</h3>
 </section>
 
 <section>
   <h2>ドロップダウン時に高さが変わらないようにする</h2>
   <div class="code">
-    <code src="../.diff/12.html"></code>
-    <iframe src="codes/12.html"></iframe>
+    <code src="../.diff/13.html"></code>
+    <iframe src="codes/13.html"></iframe>
   </div>
   <h2 class="next">未選択項目の背景を白にする</h2>
 </section>
@@ -188,17 +183,17 @@
 <section>
   <h2>未選択項目の背景を白にする</h2>
   <div class="code">
-    <code src="../.diff/13.html"></code>
-    <iframe src="codes/13.html"></iframe>
+    <code src="../.diff/14.html"></code>
+    <iframe src="codes/14.html"></iframe>
   </div>
-  <h2 class="next">重なりを調整する</h2>
+  <h2 class="next">重なり順序を手前にする</h2>
 </section>
 
 <section>
-  <h2>重なりを調整する</h2>
+  <h2>重なり順序を手前にする</h2>
   <div class="code">
-    <code src="../.diff/14.html"></code>
-    <iframe src="codes/14.html"></iframe>
+    <code src="../.diff/15.html"></code>
+    <iframe src="codes/15.html"></iframe>
   </div>
   <h2 class="next">項目クリックの挙動をチェックボックスっぽくする</h2>
 </section>
@@ -206,31 +201,48 @@
 <section>
   <h2>項目クリックの挙動をチェックボックスっぽくする</h2>
   <div class="code">
-    <code src="../.diff/15.html"></code>
-    <iframe src="codes/15.html"></iframe>
-  </div>
-</section>
-
-<section>
-  <h3>スクリプトを書いてしまった</h3>
-</section>
-
-<section>
-  <h2>選択項目にチェックをつける</h2>
-  <div class="code">
     <code src="../.diff/16.html"></code>
     <iframe src="codes/16.html"></iframe>
   </div>
-  <h2 class="next">結論</h2>
 </section>
 
 <section>
-  <h2>結論</h2>
-  <h3 style="padding: 100px 0;">既成のライブラリ使った方が柔軟かつ無難<br>（Chrome だけでも泣きそうなほど大変）</h3>
+  <h3>スクリプトなしでできなかった</h3>
+</section>
+
+<section>
+  <h3>実はカーソルキーとかスペースキーとかも<br>ハンドリングが必要だったり...</h3>
+  <p>（今回は気づかなかったことに...）</p>
+</section>
+
+<section>
+  <h2>選択項目にチェックマークをつける</h2>
+  <div class="code">
+    <code src="../.diff/17.html"></code>
+    <iframe src="codes/17.html"></iframe>
+  </div>
   <h2 class="next">未解決問題</h2>
 </section>
 
 <section>
   <h2>未解決問題</h2>
-  <h3 style="padding: 100px 0;">フォーカスでドロップダウンしていい？</h3>
+  <ul style="padding: 40px 0;">
+    <li>キーボードハンドリング</li>
+    <li>&lt;optgroup&gt;</li>
+    <li>isolation: isolate の要素が下にあると<br>ドロップダウンが手前にこない</li>
+    <li>ドロップダウンの高さが調整できない</li>
+    <li>そもそもフォーカスでドロップダウンしてよいものか</li>
+    <li>Firefox 対応</li>
+    <li>InternetE</li>
+  </ul>
+  <h2 class="next">結論</h2>
+</section>
+
+<section>
+  <h2>結論</h2>
+  <h3 style="padding: 60px 0;">私レベルでは &lt;select&gt; のカスタマイズはむずかしい<br>ループでチェックボックスを書く方が柔軟かつ無難</h3>
+</section>
+
+<section>
+  <h3>ご清聴ありがとうございました</h3>
 </section>

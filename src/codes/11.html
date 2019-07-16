@@ -1,7 +1,6 @@
 <style>
   @media (hover: hover) {
     select[multiple]:not(:focus) {
-      -webkit-appearance: none;
       block-size: 18px;
       padding-block-start: 2px;
       padding-block-end: 2px;
@@ -29,7 +28,6 @@
     }
     select[multiple]:not(:focus) > option:checked {
       display: contents;
-      pointer-events: none;
     }
     select[multiple]:not(:focus) > option:checked ~ option:checked::before {
       content: ', ';

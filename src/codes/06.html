@@ -1,23 +1,9 @@
 <style>
   @media (hover: hover) {
     select[multiple]:not(:focus) {
-      -webkit-appearance: none;
-      position: relative;
-      z-index: 0;
-      border: none;
-      background: transparent;
+      -webkit-appearance: menulist;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-    select[multiple]:not(:focus)::before {
-      content: '';
-      -webkit-appearance: menulist;
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -1;
     }
     select[multiple]:not(:focus) > option:not(:checked) {
       display: none;
