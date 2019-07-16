@@ -1,16 +1,41 @@
+<style>
+  @media (hover: hover) {
+    select[multiple]:not(:focus) {
+      -webkit-appearance: menulist;
+    }
+  }
+</style>
+
 <select multiple>
   <option>Cupcake</option>
   <option selected>Donut</option>
   <option>Eclair</option>
   <option disabled>Froyo</option>
   <option selected>Gingerbread</option>
-  <option selected>Honeycomb</option>
+  <option>Honeycomb</option>
   <option>Ice</option>
   <option selected>Jelly</option>
   <option>KitKat</option>
   <option selected>Lollipop</option>
   <option selected>Marshmallow</option>
-  <option selected>Nougat</option>
+  <option>Nougat</option>
+  <option>Oreo</option>
+  <option>Pie</option>
+</select>
+
+<select>
+  <option>Cupcake</option>
+  <option selected>Donut</option>
+  <option>Eclair</option>
+  <option disabled>Froyo</option>
+  <option>Gingerbread</option>
+  <option>Honeycomb</option>
+  <option>Ice</option>
+  <option>Jelly</option>
+  <option>KitKat</option>
+  <option>Lollipop</option>
+  <option>Marshmallow</option>
+  <option>Nougat</option>
   <option>Oreo</option>
   <option>Pie</option>
 </select>
@@ -21,10 +46,10 @@
   }
   body {
     background: #bef;
-    height: fit-content;
+    block-size: max-content;
     padding: 8px;
   }
   select {
-    width: 100%;
+    inline-size: 100%;
   }
 </style>

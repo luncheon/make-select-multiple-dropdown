@@ -9,27 +9,18 @@
 </section>
 
 <section>
-  <h2>&lt;select&gt;</h2>
+  <h2>&lt;select multiple&gt; と &lt;select&gt;</h2>
   <div class="code">
     <code src="../.diff/00.html"></code>
     <iframe src="codes/00.html"></iframe>
   </div>
-  <h2 class="next">&lt;select multiple&gt;</h2>
+  <h2 class="next">&lt;select multiple&gt; の問題点</h2>
 </section>
 
 <section>
-  <h2>&lt;select multiple&gt;</h2>
-  <div class="code">
-    <code src="../.diff/01.html"></code>
-    <iframe src="codes/01.html"></iframe>
-  </div>
-  <h2 class="next">問題点</h2>
-</section>
-
-<section>
-  <h2>問題点</h2>
+  <h2>&lt;select multiple&gt; の問題点</h2>
   <ul style="padding: 100px 0;">
-    <li>モバイルと PC とで見た目が変わる</li>
+    <li>モバイルと PC とで見た目が変わる<br>（高さが変わるのでレイアウトが崩れる）</li>
     <li>[Ctrl or Cmd + クリック] わずらわしい</li>
   </ul>
 </section>
@@ -56,6 +47,15 @@
 
 <section>
   <h2>非フォーカス時の見た目を単数選択の select に合わせる</h2>
+  <div class="code">
+    <code src="../.diff/01.html"></code>
+    <iframe src="codes/01.html"></iframe>
+  </div>
+  <h2 class="next">選択項目数をかぞえる</h2>
+</section>
+
+<section>
+  <h2>選択項目数をかぞえる</h2>
   <div class="code">
     <code src="../.diff/02.html"></code>
     <iframe src="codes/02.html"></iframe>
@@ -152,10 +152,6 @@
 </section>
 
 <section>
-  <h3>💡 ぴこーん</h3>
-</section>
-
-<section>
   <h3>option 要素そのものは表示せずに<br>option の中身だけを表示してみよう</h3>
 </section>
 
@@ -181,19 +177,10 @@
 </section>
 
 <section>
-  <h2>ドロップダウンの挙動確認用に要素を追加しておくよ</h2>
+  <h2>ドロップダウン時に高さが変わらないようにする</h2>
   <div class="code">
     <code src="../.diff/12.html"></code>
     <iframe src="codes/12.html"></iframe>
-  </div>
-  <h2 class="next">フォーカス時に高さが変わらないようにする</h2>
-</section>
-
-<section>
-  <h2>フォーカス時に高さが変わらないようにする</h2>
-  <div class="code">
-    <code src="../.diff/13.html"></code>
-    <iframe src="codes/13.html"></iframe>
   </div>
   <h2 class="next">未選択項目の背景を白にする</h2>
 </section>
@@ -201,8 +188,8 @@
 <section>
   <h2>未選択項目の背景を白にする</h2>
   <div class="code">
-    <code src="../.diff/14.html"></code>
-    <iframe src="codes/14.html"></iframe>
+    <code src="../.diff/13.html"></code>
+    <iframe src="codes/13.html"></iframe>
   </div>
   <h2 class="next">重なりを調整する</h2>
 </section>
@@ -210,8 +197,8 @@
 <section>
   <h2>重なりを調整する</h2>
   <div class="code">
-    <code src="../.diff/15.html"></code>
-    <iframe src="codes/15.html"></iframe>
+    <code src="../.diff/14.html"></code>
+    <iframe src="codes/14.html"></iframe>
   </div>
   <h2 class="next">項目クリックの挙動をチェックボックスっぽくする</h2>
 </section>
@@ -219,8 +206,8 @@
 <section>
   <h2>項目クリックの挙動をチェックボックスっぽくする</h2>
   <div class="code">
-    <code src="../.diff/16.html"></code>
-    <iframe src="codes/16.html"></iframe>
+    <code src="../.diff/15.html"></code>
+    <iframe src="codes/15.html"></iframe>
   </div>
 </section>
 
@@ -231,8 +218,8 @@
 <section>
   <h2>選択項目にチェックをつける</h2>
   <div class="code">
-    <code src="../.diff/17.html"></code>
-    <iframe src="codes/17.html"></iframe>
+    <code src="../.diff/16.html"></code>
+    <iframe src="codes/16.html"></iframe>
   </div>
   <h2 class="next">結論</h2>
 </section>
