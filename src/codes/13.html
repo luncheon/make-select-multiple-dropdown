@@ -1,7 +1,7 @@
 <style>
   @media (hover: hover) {
     select[multiple] {
-      height: 18px;
+      block-size: 18px;
     }
     select[multiple]:focus {
       min-width: max-content;
@@ -9,7 +9,10 @@
     }
     select[multiple]:not(:focus) {
       -webkit-appearance: none;
-      padding: 2px 20px 2px 4px;
+      padding-block-start: 2px;
+      padding-block-end: 2px;
+      padding-inline-start: 4px;
+      padding-inline-end: 20px;
       position: relative;
       z-index: 0;
       border: none;
