@@ -1,0 +1,13 @@
+@font-face {
+  font-family: ArbutusSlab;
+  src: url(./assets/fonts/ArbutusSlab.woff);
+}
+
+@font-face {
+  font-family: GenJyuuGothicX;
+  src: url(./assets/fonts/GenJyuuGothicX-Medium.woff2);
+}
+
+body {
+  font-family: ArbutusSlab,GenJyuuGothicX,sans-serif;
+}

@@ -17,11 +17,6 @@
       color: black;
       -webkit-text-fill-color: black;
     }
-    select[multiple]:focus > option:not(:disabled):hover {
-      color: white;
-      -webkit-text-fill-color: white;
-      background-image: linear-gradient(#0063e1, #0063e1);
-    }
     select[multiple]:focus > option::before {
       content: '';
       width: 2em;
@@ -32,9 +27,6 @@
     select[multiple]:focus > option:checked::before {
       /* https://materialdesignicons.com */
       background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/></svg>');
-    }
-    select[multiple]:focus > option:hover:checked::before {
-      filter: invert(1);
     }
     select[multiple]:not(:focus) {
       padding-block-start: 2px;
@@ -69,61 +61,27 @@
   }
 </style>
 
-<script>
-  if (matchMedia('(hover:hover)').matches) {
-    addEventListener('pointerdown', event => {
-      if (event.target.matches('select[multiple]>option:not(:disabled)')) {
-        event.preventDefault()
-        event.target.selected = !event.target.selected
-      }
-    })
-  }
-</script>
-
 <select multiple>
-  <option>Cupcake</option>
-  <option selected>Donut</option>
-  <option>Eclair</option>
-  <option disabled>Froyo</option>
-  <option selected>Gingerbread</option>
-  <option>Honeycomb</option>
-  <option>Ice</option>
-  <option selected>Jelly</option>
-  <option>KitKat</option>
-  <option selected>Lollipop</option>
-  <option selected>Marshmallow</option>
-  <option>Nougat</option>
-  <option>Oreo</option>
-  <option>Pie</option>
-</select>
-
-<select>
-  <option>Cupcake</option>
-  <option selected>Donut</option>
-  <option>Eclair</option>
-  <option disabled>Froyo</option>
-  <option>Gingerbread</option>
-  <option>Honeycomb</option>
-  <option>Ice</option>
-  <option>Jelly</option>
-  <option>KitKat</option>
-  <option>Lollipop</option>
-  <option>Marshmallow</option>
-  <option>Nougat</option>
-  <option>Oreo</option>
-  <option>Pie</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla(  0,100%,50%,.2)'})">Cupcake</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla( 24,100%,50%,.2)'})" selected>Donut</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla( 48,100%,50%,.2)'})">Eclair</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla( 72,100%,50%,.2)'})">Froyo</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla( 96,100%,50%,.2)'})" selected>Gingerbread</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla(120,100%,50%,.2)'})">Honeycomb</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla(144,100%,50%,.2)'})">Ice</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla(168,100%,50%,.2)'})" selected>Jelly</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla(192,100%,50%,.2)'})">KitKat</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla(216,100%,50%,.2)'})" selected>Lollipop</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla(240,100%,50%,.2)'})" selected>Marshmallow</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla(264,100%,50%,.2)'})">Nougat</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla(288,100%,50%,.2)'})">Oreo</option>
+  <option onmouseenter="ripplet(arguments[0],{color:'hsla(312,100%,50%,.2)'})">Pie</option>
 </select>
 
 <style>
-  html {
-    background: #3cf;
-  }
-  body {
-    background: #bef;
-    block-size: max-content;
-    padding: 8px;
-  }
   select {
     inline-size: 100%;
   }
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/ripplet.js@0.1.14"></script>

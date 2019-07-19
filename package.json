@@ -18,6 +18,7 @@
     "posthtml-include": "^1.2.0",
     "posthtml-inline-assets": "^3.0.0",
     "reveal.js": "^3.8.0",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "sass": "^1.22.7"
   }
 }

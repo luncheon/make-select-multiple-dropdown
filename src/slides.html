@@ -9,7 +9,7 @@
 
 <section>
   <h2>きっかけ</h2>
-  <a target="_blank" rel="noopener nofollow" href="https://qiita.com/hand-dot/items/1a98ab5d16cd2c2e94f4"><img src="assets/preface.png"></a>
+  <a target="_blank" rel="noopener nofollow" href="https://qiita.com/hand-dot/items/1a98ab5d16cd2c2e94f4"><img src="assets/images/preface.png"></a>
 </section>
 
 <section>
@@ -23,7 +23,7 @@
 
 <section>
   <h2>&lt;select multiple&gt; の問題点</h2>
-  <ul style="padding: 100px 0;">
+  <ul style="padding: 60px 0;">
     <li><a target="_blank" rel="noopener nofollow" href="https://qiita.com/hand-dot/items/1a98ab5d16cd2c2e94f4">元記事参照</a></li>
     <li>モバイルと PC とで見た目が異なる<br>（高さが異なるのでレイアウトが崩れる）</li>
     <li>[Ctrl or Cmd + クリック] わずらわしい</li>
@@ -32,18 +32,16 @@
 
 <section>
   <h3>そだねー</h3>
+  <p>（平成最後のユーキャン新語・流行語大賞）</p>
 </section>
 
 <section>
-  <h3>記事中に実装へのリンクあるけど</h3>
+  <h3>ということで<br>私なりに実装しようと試みたのですが<br>びっくりするほど難しかったので共有します。</h3>
+  <p>（しかも Chromium ベースのブラウザーでしか動きません。）</p>
 </section>
 
 <section>
-  <h3>見なかったことにして<br>私なりに実装してみたよ</h3>
-</section>
-
-<section>
-  <h3>まずはドロップダウンする前の外観から</h3>
+  <h3>まずは見た目を単数選択の select に合わせます。</h3>
 </section>
 
 <section>
@@ -235,28 +233,37 @@
     <code src="../.diff/18.html"></code>
     <iframe src="codes/18.html"></iframe>
   </div>
-  <h2 class="next">未解決問題</h2>
+  <h2 class="next">残課題</h2>
 </section>
 
-<section>
-  <h2>未解決問題</h2>
-  <ul style="padding: 40px 0;">
+<section style="text-align: left;">
+  <h2>どうにかなりそうな課題</h2>
+  <ul style="padding: 20px 0 40px 40px;">
     <li>キーボードハンドリング</li>
     <li>&lt;optgroup&gt;</li>
-    <li>isolation: isolate の要素が下にあると<br>ドロップダウンが手前にこない</li>
+  </ul>
+  <h2>どうにもならなそうな課題</h2>
+  <ul style="padding: 20px 0 0 40px;">
     <li>ドロップダウンの高さが調整できない</li>
     <li>そもそもフォーカスでドロップダウンしてよいものか</li>
     <li>Firefox 対応</li>
+    <li>Safari 対応</li>
     <li>InternetE</li>
   </ul>
-  <h2 class="next">結論</h2>
+  <h2 class="next">所感</h2>
 </section>
 
 <section>
-  <h2>結論</h2>
-  <h3 style="padding: 60px 0;">私レベルでは &lt;select&gt; のカスタマイズはむずかしい<br>ループでチェックボックスを書く方が柔軟かつ無難</h3>
+  <h2>所感</h2>
+  <ul>
+    <li>私レベルでは &lt;select&gt; のカスタマイズはむずかしい</li>
+    <li>select にラッパー要素をつけるルールを課せば<br>もう少しどうにかなりそう</li>
+    <li>display: contents の使いどころを知った</li>
+  </ul>
 </section>
 
 <section>
   <h3>ご清聴ありがとうございました</h3>
+  <p>p.s. ↓こういうことやりたいひとは <a target="_blank" href="https://github.com/luncheon/ripplet.js">ripplet.js</a> みてね</p>
+  <iframe src="codes/99.html" style="height: 240px; transform-origin: 50% 0; transform: scale(2);"></iframe>
 </section>

@@ -7,7 +7,8 @@
   font-size: 32px;
 }
 .reveal h1 {
-  font-size: 1.2em;
+  font-size: 1.4em;
+  margin-bottom: 1em;
 }
 .reveal h2 {
   font-size: 1em;
@@ -21,7 +22,7 @@
 }
 .reveal h2.next::before {
   content: 'next » ';
-  color: #fd0;
+  color: #fe0;
 }
 .reveal section img {
   border-color: transparent;
@@ -83,10 +84,13 @@
 }
 
 .code > iframe {
-  border: none;
   background-color: white;
   height: 280px;
   width: 15%;
   transform: scale(2);
   transform-origin: 0 0;
+}
+
+iframe {
+  border: none;
 }
