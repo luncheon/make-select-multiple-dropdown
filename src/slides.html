@@ -1,5 +1,8 @@
 <section>
-  <h1>&lt;select multiple&gt; をドロップダウンにする</h1>
+  <h1>
+    &lt;select multiple&gt; をドロップダウンにする
+    <a href="https://github.com/luncheon/make-select-multiple-dropdown/" style="display: block; margin-top: 1em; font-size: 24px;">https://github.com/luncheon/make-select-multiple-dropdown/</a>
+  </h1>
   <aside style="text-align: right;">
     <a target="_blank" rel="noopener nofollow" href="https://connpass.com/dashboard/">We Are JavaScripters! @34th</a><br>
     <time datetime="2019-07-22">2019-07-22</time><br>
@@ -8,7 +11,12 @@
 </section>
 
 <section>
-  <h2>きっかけ</h2>
+  <h3>初登壇です🔰</h3>
+  <p>いろいろゆるしてください</p>
+</section>
+
+<section>
+  <h2>きっかけは @hand-dot さんの記事</h2>
   <a target="_blank" rel="noopener nofollow" href="https://qiita.com/hand-dot/items/1a98ab5d16cd2c2e94f4"><img src="assets/images/preface.png"></a>
 </section>
 
@@ -18,29 +26,40 @@
     <code src="../.diff/00.html"></code>
     <iframe src="codes/00.html"></iframe>
   </div>
+  <h2 class="next">モバイルでは multiple アリもナシも同じ外観</h2>
+</section>
+
+<section>
+  <h2>モバイルでは multiple アリもナシも同じ外観</h2>
+  <table>
+    <tr>
+      <td style="border: none; text-align: center;">PC</td>
+      <td style="border: none; text-align: center;" colspan="2">Android</td>
+    </tr>
+    <tr>
+      <td><img src="assets/images/select-multiple-on-mac.png" style="height: 480px; width: auto;"></td>
+      <td><img src="assets/images/select-multiple-on-android.jpg" style="height: 480px; width: auto;"></td>
+      <td><img src="assets/images/select-multiple-on-android-open.jpg" style="height: 480px; width: auto;"></td>
+    </tr>
+  </table>
   <h2 class="next">&lt;select multiple&gt; の問題点</h2>
 </section>
 
 <section>
   <h2>&lt;select multiple&gt; の問題点</h2>
-  <ul style="padding: 60px 0;">
-    <li><a target="_blank" rel="noopener nofollow" href="https://qiita.com/hand-dot/items/1a98ab5d16cd2c2e94f4">元記事参照</a></li>
-    <li>モバイルと PC とで見た目が異なる<br>（高さが異なるのでレイアウトが崩れる）</li>
-    <li>[Ctrl or Cmd + クリック] わずらわしい</li>
-  </ul>
+  <ol style="padding: 60px 0;">
+    <li>見た目がモバイルと PC とで異なる<br>（要素の高さが異なるのでレイアウトが崩れる）</li>
+    <li>PC での [Ctrl or Cmd + クリック] わずらわしい</li>
+  </ol>
 </section>
 
 <section>
-  <h3>そだねー</h3>
-  <p>（平成最後のユーキャン新語・流行語大賞）</p>
+  <h3>PC の &lt;select multiple&gt; を<br>ドロップダウンにできないかな？<br><br>できればスタイルシートだけで<br>専用の div でラップするのもナシで</h3>
 </section>
 
 <section>
-  <h3>ということで<br>私なりに実装しようと試みたのですが<br>びっくりするほど難しかったので共有します。</h3>
-  <p>（しかも Chromium ベースのブラウザーでしか動きません。）</p>
-</section>
-
-<section>
+  <h3>Chrome でやってみました。</h3>
+  <p style="margin-bottom: 3em;">（少なくともやろうとしてみました。）</p>
   <h3>まずは見た目を単数選択の select に合わせます。</h3>
 </section>
 
@@ -48,16 +67,24 @@
   <h2>見た目を単数選択の select に合わせる</h2>
   <div class="code">
     <code src="../.diff/01.html"></code>
-    <iframe src="codes/01.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/00.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/01.html"></iframe>
+    </div>
   </div>
   <h2 class="next">選択項目数をかぞえる</h2>
 </section>
 
 <section>
-  <h2>選択項目数をかぞえる</h2>
+  <h2>選択項目数をかぞえる（思ったより簡単だったのでボツ）</h2>
   <div class="code">
     <code src="../.diff/02.html"></code>
-    <iframe src="codes/02.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/01.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/02.html"></iframe>
+    </div>
   </div>
   <h2 class="next">選択項目だけを横並びに表示する</h2>
 </section>
@@ -66,7 +93,11 @@
   <h2>選択項目だけを横並びに表示する</h2>
   <div class="code">
     <code src="../.diff/04.html"></code>
-    <iframe src="codes/04.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/03.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/04.html"></iframe>
+    </div>
   </div>
   <h2 class="next">項目をカンマ区切りにする</h2>
 </section>
@@ -75,22 +106,26 @@
   <h2>項目をカンマ区切りにする</h2>
   <div class="code">
     <code src="../.diff/05.html"></code>
-    <iframe src="codes/05.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/04.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/05.html"></iframe>
+    </div>
   </div>
   <h2 class="next">項目がはみ出ないようにする</h2>
 </section>
 
 <section>
-  <h2>項目がはみ出ないようにする</h2>
+  <h2>項目がはみ出ないようにする（失敗）</h2>
   <div class="code">
     <code src="../.diff/06.html"></code>
-    <iframe src="codes/06.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/05.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/06.html"></iframe>
+    </div>
   </div>
-</section>
-
-<section>
-  <h3>overflow 効かない</h3>
-  <p>（インラインスタイルで !important つけても効かない）</p>
+  <h2 class="next">overflow が効かないので...</h2>
 </section>
 
 <section>
@@ -101,7 +136,11 @@
   <h2>項目がはみ出ないようにする</h2>
   <div class="code">
     <code src="../.diff/07.html"></code>
-    <iframe src="codes/07.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/06.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/07.html"></iframe>
+    </div>
   </div>
   <h2 class="next">サイズと余白を調整する</h2>
 </section>
@@ -110,38 +149,39 @@
   <h2>サイズと余白を調整する</h2>
   <div class="code">
     <code src="../.diff/08.html"></code>
-    <iframe src="codes/08.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/07.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/08.html"></iframe>
+    </div>
   </div>
   <h2 class="next">項目の背景を透明にする</h2>
 </section>
 
 <section>
-  <h2>項目の背景を透明にする</h2>
+  <h2>項目の背景を透明にする（失敗）</h2>
   <div class="code">
     <code src="../.diff/09.html"></code>
-    <iframe src="codes/09.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/08.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/09.html"></iframe>
+    </div>
   </div>
-</section>
-
-<section>
-  <h3>background-color 効かない</h3>
-  <p>（インラインスタイルで !important つけても効かない）</p>
-</section>
-
-<section>
-  <h3>background-image 効くかな</h3>
+  <h2 class="next">background-color は効かないけど...</h2>
 </section>
 
 <section>
   <h2>項目の背景を白にする</h2>
   <div class="code">
     <code src="../.diff/10.html"></code>
-    <iframe src="codes/10.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/09.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/10.html"></iframe>
+    </div>
   </div>
-</section>
-
-<section>
-  <h3>やっぱ白じゃダメだ<br>透明じゃなきゃ</h3>
+  <h2 class="next">やっぱ白じゃダメだ、透明じゃなきゃ...</h2>
 </section>
 
 <section>
@@ -152,32 +192,44 @@
   <h2>項目の背景を透明にする</h2>
   <div class="code">
     <code src="../.diff/11.html"></code>
-    <iframe src="codes/11.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/10.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/11.html"></iframe>
+    </div>
   </div>
-  <h2 class="next">項目のクリックを無効化する</h2>
+  <h2 class="next">ドロップダウン前のクリック項目の選択を抑止する</h2>
 </section>
 
 <section>
-  <h2>項目のクリックを無効化する</h2>
+  <h2>ドロップダウン前のクリック項目の選択を抑止する</h2>
   <div class="code">
     <code src="../.diff/12.html"></code>
-    <iframe src="codes/12.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/11.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/12.html"></iframe>
+    </div>
   </div>
 </section>
 
 <section>
-  <h3>ここまではいい感じ</h3>
+  <h3>ここまではいい感じにできました。</h3>
 </section>
 
 <section>
-  <h3>ここからはドロップダウンしたときの挙動</h3>
+  <h3>いよいよドロップダウンさせます。</h3>
 </section>
 
 <section>
-  <h2>ドロップダウン時に高さが変わらないようにする</h2>
+  <h2>フォーカス時の高さ調整（ドロップダウンさせる）</h2>
   <div class="code">
     <code src="../.diff/13.html"></code>
-    <iframe src="codes/13.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/12.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/13.html"></iframe>
+    </div>
   </div>
   <h2 class="next">未選択項目の背景を白にする</h2>
 </section>
@@ -186,7 +238,11 @@
   <h2>未選択項目の背景を白にする</h2>
   <div class="code">
     <code src="../.diff/14.html"></code>
-    <iframe src="codes/14.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/13.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/14.html"></iframe>
+    </div>
   </div>
   <h2 class="next">重なり順序を手前にする</h2>
 </section>
@@ -195,7 +251,11 @@
   <h2>重なり順序を手前にする</h2>
   <div class="code">
     <code src="../.diff/15.html"></code>
-    <iframe src="codes/15.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/14.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/15.html"></iframe>
+    </div>
   </div>
   <h2 class="next">選択項目にチェックマークをつける</h2>
 </section>
@@ -204,7 +264,11 @@
   <h2>選択項目にチェックマークをつける</h2>
   <div class="code">
     <code src="../.diff/16.html"></code>
-    <iframe src="codes/16.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/15.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/16.html"></iframe>
+    </div>
   </div>
   <h2 class="next">項目クリックの挙動をチェックボックスっぽくする</h2>
 </section>
@@ -213,12 +277,16 @@
   <h2>項目クリックの挙動をチェックボックスっぽくする</h2>
   <div class="code">
     <code src="../.diff/17.html"></code>
-    <iframe src="codes/17.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/16.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/17.html"></iframe>
+    </div>
   </div>
 </section>
 
 <section>
-  <h3>スクリプトなしでできなかった</h3>
+  <h3>スタイルシートだけでは無理でした。</h3>
 </section>
 
 <section>
@@ -231,24 +299,25 @@
   <h2>マウスオーバー項目を強調する</h2>
   <div class="code">
     <code src="../.diff/18.html"></code>
-    <iframe src="codes/18.html"></iframe>
+    <div class="frames">
+      <iframe src="codes/17.html"></iframe>
+      <div class="arrow-down"></div>
+      <iframe src="codes/18.html"></iframe>
+    </div>
   </div>
   <h2 class="next">残課題</h2>
 </section>
 
 <section style="text-align: left;">
-  <h2>どうにかなりそうな課題</h2>
-  <ul style="padding: 20px 0 40px 40px;">
-    <li>キーボードハンドリング</li>
-    <li>&lt;optgroup&gt;</li>
-  </ul>
-  <h2>どうにもならなそうな課題</h2>
+  <h2>残課題</h2>
   <ul style="padding: 20px 0 0 40px;">
-    <li>ドロップダウンの高さが調整できない</li>
+    <li>&lt;optgroup&gt;</li>
+    <li>キーボードハンドリング</li>
+    <li>項目数が多いときドロップダウンの中でスクロールさせたい</li>
     <li>そもそもフォーカスでドロップダウンしてよいものか</li>
     <li>Firefox 対応</li>
     <li>Safari 対応</li>
-    <li>InternetE</li>
+    <li>InternetE...（震え声）</li>
   </ul>
   <h2 class="next">所感</h2>
 </section>
@@ -256,8 +325,11 @@
 <section>
   <h2>所感</h2>
   <ul>
-    <li>私レベルでは &lt;select&gt; のカスタマイズはむずかしい</li>
-    <li>select にラッパー要素をつけるルールを課せば<br>もう少しどうにかなりそう</li>
+    <li>&lt;select&gt; のカスタマイズはむずかしい</li>
+    <ul>
+      <li>ShadowDOM さわれないし attachShadow もできない</li>
+      <li>Firefox だと ::before すら使えず手も足も出ない</li>
+    </ul>
     <li>display: contents の使いどころを知った</li>
   </ul>
 </section>
