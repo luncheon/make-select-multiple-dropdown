@@ -2,10 +2,10 @@
   @media (hover: hover) {
     select[multiple] {
       block-size: 18px;
-      isolation: isolate;
       border: none;
     }
     select[multiple]:focus {
+      isolation: isolate;
       overflow: visible;
     }
     select[multiple]:focus > option {
@@ -34,6 +34,7 @@
       padding-inline-start: 8px;
       padding-inline-end: 20px;
       position: relative;
+      z-index: 0;
       background: transparent;
       overflow: hidden;
       text-overflow: ellipsis;

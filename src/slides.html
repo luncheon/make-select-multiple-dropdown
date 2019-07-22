@@ -48,7 +48,11 @@
 <section>
   <h2>&lt;select multiple&gt; の問題点</h2>
   <ol style="padding: 60px 0;">
-    <li>見た目がモバイルと PC とで異なる<br>（要素の高さが異なるのでレイアウトが崩れる）</li>
+    <li>同じマークアップでも UI がモバイルと PC とで異なる
+      <ul>
+        <li>要素の高さが異なるのでレイアウトが崩れる</li>
+      </ul>
+    </li>
     <li>PC での [Ctrl or Cmd + クリック] わずらわしい</li>
   </ol>
 </section>
@@ -129,7 +133,7 @@
 </section>
 
 <section>
-  <h3>やっぱ appearance: menulist は背景にしよう</h3>
+  <h3>appearance: menulist の制限っぽい<br>appearance: menulist は背景にしよう</h3>
 </section>
 
 <section>
@@ -185,10 +189,6 @@
 </section>
 
 <section>
-  <h3>option 要素そのものは表示せずに<br>option の中身だけを表示してみよう</h3>
-</section>
-
-<section>
   <h2>項目の背景を透明にする</h2>
   <div class="code">
     <code src="../.diff/11.html"></code>
@@ -214,15 +214,11 @@
 </section>
 
 <section>
-  <h3>ここまではいい感じにできました。</h3>
+  <h3>ここまでワリといい感じにできました。<br>あとはドロップダウン時の挙動の調整だけ。<br>（だけ？）</h3>
 </section>
 
 <section>
-  <h3>いよいよドロップダウンさせます。</h3>
-</section>
-
-<section>
-  <h2>フォーカス時の高さ調整（ドロップダウンさせる）</h2>
+  <h2>フォーカス（ドロップダウン）時の高さ調整</h2>
   <div class="code">
     <code src="../.diff/13.html"></code>
     <div class="frames">
@@ -274,7 +270,7 @@
 </section>
 
 <section>
-  <h2>項目クリックの挙動をチェックボックスっぽくする</h2>
+  <h2>項目クリックの挙動をチェックボックスっぽく（トグル）する</h2>
   <div class="code">
     <code src="../.diff/17.html"></code>
     <div class="frames">
@@ -296,7 +292,7 @@
 </section>
 
 <section>
-  <h2>マウスオーバー項目を強調する</h2>
+  <h2>マウスオーバー項目を強調する（トグル動作ではこの方が自然）</h2>
   <div class="code">
     <code src="../.diff/18.html"></code>
     <div class="frames">
